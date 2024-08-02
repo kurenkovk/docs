@@ -145,6 +145,20 @@ Here are the metrics available to Prometheus:
 | ------ | :------ |
 | cluster_shards_limit | Total shard limit by the license by shard type (ram / flash) |
 
+## Cluster watchdog metrics
+
+| Metric | Type | Description |
+|--------|------|-------------|
+| azure_token_ttl{cluster_wd=<node_uid>} | gauge| How many seconds left or the timestamp when the token is invalid.|
+| generation{cluster_wd=<node_uid>}| gauge| Generation number of the specific cluster_wd|
+| has_qourum{cluster_wd=<node_uid>, has_witness_disk=BOOL} | gauge| Has_qourum = 1<br />No quorum = 0 |
+| is_primary{cluster_wd=<node_uid>}| gauge| primary = 1<br />secondary = 0 |
+| total_live_nodes_count{cluster_wd=<node_uid>} | gauge| Number of live nodes|
+| total_node_count{cluster_wd=<node_uid>} | gauge| Number of nodes |
+| total_primary_selection_ended{cluster_wd=<node_uid>} | counter | Monotonic counter for each selection process that ended |
+| total_primary_selections{cluster_wd=<node_uid>}| counter | Monotonic counter for each selection process that started|
+| witness_disk_reads{status=” success/failure”, cluster_wd=<node_uid>}| counter | How many times read from the witness disk |
+| witness_disk_writes{status=”success/failure”, cluster_wd=<node_uid>}| counter | How many times wrote to the witness disk |
 
 ## Proxy metrics
 
