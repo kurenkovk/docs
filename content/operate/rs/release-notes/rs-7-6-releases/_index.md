@@ -5,8 +5,8 @@ categories:
 - docs
 - operate
 - rs
-compatibleOSSVersion: Redis 7.2.0
-description: TBA
+compatibleOSSVersion: Redis 7.4.0
+description: Cluster Manager UI enhancements for node actions, database tags, and database configuration. Log rotation based on both size and time. Module management enhancements.
 hideListLinks: true
 linkTitle: 7.6.0 releases
 toc: 'true'
@@ -19,13 +19,17 @@ weight: 69
 
 This version offers:
  
-- TBA
+- Cluster Manager UI enhancements for node actions, database tags, and database configuration
+
+- Log rotation based on both size and time
+
+- Module management enhancements
 
 ## Detailed release notes
 
 For more detailed release notes, select a build version from the following table:
 
-{{<table-children columnNames="Version&nbsp;(Release&nbsp;date)&nbsp;,Major changes,OSS&nbsp;Redis compatibility" columnSources="LinkTitle,Description,compatibleOSSVersion" enableLinks="LinkTitle">}}
+{{<table-children columnNames="Version&nbsp;(Release&nbsp;date)&nbsp;,Major changes,Redis CE compatibility" columnSources="LinkTitle,Description,compatibleOSSVersion" enableLinks="LinkTitle">}}
 
 ## Version changes
 
@@ -37,7 +41,7 @@ The end-of-life policy for Redis Enterprise Software versions 6.2 and later has 
 
 #### Supported upgrade paths
 
-After August 31, 2024, Redis Enterprise Software versions 6.2.4 and 6.2.8 will not be included in [supported upgrade paths]({{<relref "/operate/rs/installing-upgrading/upgrading/upgrade-cluster#supported-upgrade-paths">}}) for Redis Enterprise Software versions beyond 7.4.x. Redis Enterprise Software versions 6.2.10, 6.2.12, and 6.2.18 will continue to be part of the upgrade path.
+Redis Enterprise Software versions 6.2.4 and 6.2.8 do not support direct upgrades beyond version 7.4.x. Versions 6.2.10, 6.2.12, and 6.2.18 are part of the [upgrade path]({{<relref "/operate/rs/installing-upgrading/upgrading/upgrade-cluster#supported-upgrade-paths">}}). To upgrade from 6.2.4 or 6.2.8 to versions later than 7.4.x, an intermediate upgrade is required.
 
 The next major Redis Enterprise Software release will still bundle Redis database version 6.2 and allow database upgrades from Redis database version 6.2 to 7.x.
 
@@ -83,7 +87,7 @@ The following table provides a snapshot of supported platforms as of this Redis 
 
 | Redis Software<br />major versions | 7.6 | 7.4 | 7.2 | 6.4 | 6.2 |
 |---------------------------------|:-----:|:-----:|:-----:|:-----:|:-----:|
-| **Release date** | Sept 2024 | Feb 2024 | Aug 2023 | Feb 2023 | Aug 2021 |
+| **Release date** | Aug 2024 | Feb 2024 | Aug 2023 | Feb 2023 | Aug 2021 |
 | [**End-of-life date**]({{< relref "/operate/rs/installing-upgrading/product-lifecycle#endoflife-schedule" >}}) | Determined after<br />next major release | TBA | Feb 2026 | Aug 2025 | Feb 2025 |
 | **Platforms** | | | | | |
 | RHEL 9 &<br />compatible distros<sup>[1](#table-note-1)</sup> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | – | – | – |
@@ -115,10 +119,6 @@ The following table provides a snapshot of supported platforms as of this Redis 
 #### New Cluster Manager UI limitations
 
 The following legacy UI features are not yet available in the new Cluster Manager UI:
-
-- Remove a node.
-
-    Use the REST API or legacy UI instead. See [Remove a cluster node]({{< relref "/operate/rs/clusters/remove-node" >}}) for instructions.
 
 - Purge an Active-Active instance.
 

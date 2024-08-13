@@ -1,13 +1,13 @@
 ---
-Title: Redis Enterprise Software release notes 7.6.0-tba (September 2024)
+Title: Redis Enterprise Software release notes 7.6.0-tba (August 2024)
 alwaysopen: false
 categories:
 - docs
 - operate
 - rs
-compatibleOSSVersion: Redis 7.2.4
-description: TBA
-linkTitle: 7.6.0-tba (September 2024)
+compatibleOSSVersion: Redis 7.4.0
+description: Cluster Manager UI enhancements for node actions, database tags, and database configuration. Log rotation based on both size and time. Module management enhancements.
+linkTitle: 7.6.0-tba (August 2024)
 weight: 90
 ---
 
@@ -17,7 +17,11 @@ weight: 90
 
 This version offers:
 
-- TBA
+- Cluster Manager UI enhancements for node actions, database tags, and database configuration
+
+- Log rotation based on both size and time
+
+- Module management enhancements
 
 ## New in this release
 
@@ -27,35 +31,33 @@ This version offers:
 
 ### Enhancements
 
-- TBA
+- New Cluster Manager UI enhancements:
+
+    - Perform node actions from the **Nodes** screen to verify nodes, set a node as primary or secondary, remove nodes, and manage node alert settings.
+
+    - Categorize databases with custom tags. When you add new tags to a database, the keys and values already used by existing tags will appear as suggestions.
+
+    - Moved several settings on the database configuration screen:
+    
+        - The eviction setting now appears in the **Capacity** section.
+
+        - **High availability** and **Durability** have separate sections.
+
+- Added support for [log rotation]({{<relref "/operate/rs/clusters/logging/log-security#log-rotation">}}) based on both size and time.
 
 #### Redis module feature sets
 
-Redis Enterprise comes packaged with several modules. As of version 7.4.2, Redis Enterprise includes two feature sets, compatible with different Redis database versions.
+Redis Enterprise comes packaged with several modules. As of version 7.6.0, Redis Enterprise includes three feature sets, compatible with different Redis database versions.
 
-Bundled Redis modules compatible with Redis database version 7.2:
+The following table shows which Redis modules are compatible with each Redis database version included in this release.
 
-- [RediSearch 2.8.13]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisearch/redisearch-2.8-release-notes.md" >}})
+| Redis database version | Compatible Redis modules |
+|------------------------|--------------------------|
+| 7.4 | [RediSearch 2.10.5]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisearch/redisearch-2.10-release-notes.md" >}})<br />[RedisJSON 2.8.3]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisjson/redisjson-2.8-release-notes.md" >}})<br />[RedisTimeSeries 1.12.2]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redistimeseries/redistimeseries-1.12-release-notes.md" >}})<br />[RedisBloom 2.8.2]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisbloom/redisbloom-2.8-release-notes.md" >}}) |
+| 7.2 | [RediSearch 2.8.14]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisearch/redisearch-2.8-release-notes.md" >}})<br />[RedisJSON 2.6.10]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisjson/redisjson-2.6-release-notes.md" >}})<br />[RedisTimeSeries 1.10.12]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redistimeseries/redistimeseries-1.10-release-notes.md" >}})<br />[RedisBloom 2.6.13]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisbloom/redisbloom-2.6-release-notes.md" >}}) |
+| 6.2 | [RediSearch 2.6.19]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisearch/redisearch-2.6-release-notes.md" >}})<br />[RedisJSON 2.4.9]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisjson/redisjson-2.4-release-notes.md" >}})<br />[RedisTimeSeries 1.8.13]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redistimeseries/redistimeseries-1.8-release-notes.md" >}})<br />[RedisBloom 2.4.10]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisbloom/redisbloom-2.4-release-notes.md" >}})<br />[RedisGraph v2.10.15]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisgraph/redisgraph-2.10-release-notes.md" >}})<sup>[1](#module-note-1)</sup>  |
 
-- [RedisJSON 2.6.10]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisjson/redisjson-2.6-release-notes.md" >}})
-
-- [RedisTimeSeries 1.10.12]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redistimeseries/redistimeseries-1.10-release-notes.md" >}})
-
-- [RedisBloom 2.6.12]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisbloom/redisbloom-2.6-release-notes.md" >}})
-
-- [RedisGears 2.0.20 preview](https://github.com/RedisGears/RedisGears/releases/tag/v2.0.20-m21): The RedisGears preview will not be promoted to GA and will be removed in a future release.
-
-Bundled Redis modules compatible with Redis database versions 6.0 and 6.2:
-
-- [RediSearch 2.6.18]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisearch/redisearch-2.6-release-notes.md" >}})
-
-- [RedisJSON 2.4.9]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisjson/redisjson-2.4-release-notes.md" >}})
-
-- [RedisTimeSeries 1.8.13]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redistimeseries/redistimeseries-1.8-release-notes.md" >}})
-
-- [RedisBloom 2.4.9]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisbloom/redisbloom-2.4-release-notes.md" >}})
-
-- [RedisGraph v2.10.15]({{< relref "/operate/oss_and_stack/stack-with-enterprise/release-notes/redisgraph/redisgraph-2.10-release-notes.md" >}}): RedisGraph end-of-life has been announced and will be removed in a future release. See the [RedisGraph end-of-life announcement](https://redis.io/blog/redisgraph-eol/) for more details.
+1. <a name="module-note-1"></a>RedisGraph end-of-life has been announced and will be removed in a future release. See the [RedisGraph end-of-life announcement](https://redis.io/blog/redisgraph-eol/) for more details.
 
 ### Resolved issues
 
@@ -71,7 +73,7 @@ The end-of-life policy for Redis Enterprise Software versions 6.2 and later has 
 
 #### Supported upgrade paths
 
-After August 31, 2024, Redis Enterprise Software versions 6.2.4 and 6.2.8 will not be included in [supported upgrade paths]({{<relref "/operate/rs/installing-upgrading/upgrading/upgrade-cluster#supported-upgrade-paths">}}) for Redis Enterprise Software versions beyond 7.4.x. Redis Enterprise Software versions 6.2.10, 6.2.12, and 6.2.18 will continue to be part of the upgrade path.
+Redis Enterprise Software versions 6.2.4 and 6.2.8 do not support direct upgrades beyond version 7.4.x. Versions 6.2.10, 6.2.12, and 6.2.18 are part of the [upgrade path]({{<relref "/operate/rs/installing-upgrading/upgrading/upgrade-cluster#supported-upgrade-paths">}}). To upgrade from 6.2.4 or 6.2.8 to versions later than 7.4.x, an intermediate upgrade is required.
 
 The next major Redis Enterprise Software release will still bundle Redis database version 6.2 and allow database upgrades from Redis database version 6.2 to 7.x.
 
@@ -117,7 +119,7 @@ The following table provides a snapshot of supported platforms as of this Redis 
 
 | Redis Software<br />major versions | 7.6 | 7.4 | 7.2 | 6.4 | 6.2 |
 |---------------------------------|:-----:|:-----:|:-----:|:-----:|:-----:|
-| **Release date** | Sept 2024 | Feb 2024 | Aug 2023 | Feb 2023 | Aug 2021 |
+| **Release date** | Aug 2024 | Feb 2024 | Aug 2023 | Feb 2023 | Aug 2021 |
 | [**End-of-life date**]({{< relref "/operate/rs/installing-upgrading/product-lifecycle#endoflife-schedule" >}}) | Determined after<br />next major release | TBA | Feb 2026 | Aug 2025 | Feb 2025 |
 | **Platforms** | | | | | |
 | RHEL 9 &<br />compatible distros<sup>[1](#table-note-1)</sup> | <span title="Supported">&#x2705;</span> | <span title="Supported">&#x2705;</span> | – | – | – |
@@ -144,7 +146,7 @@ The following table provides a snapshot of supported platforms as of this Redis 
 
 The following table shows the SHA256 checksums for the available packages:
 
-| Package | SHA256 checksum (7.6.0-tba Sept release) |
+| Package | SHA256 checksum (7.6.0-tba Aug release) |
 |---------|---------------------------------------|
 | Ubuntu 18 | <span class="break-all"></span> |
 | Ubuntu 20 | <span class="break-all"></span> |
@@ -161,10 +163,6 @@ The following table shows the SHA256 checksums for the available packages:
 #### New Cluster Manager UI limitations
 
 The following legacy UI features are not yet available in the new Cluster Manager UI:
-
-- Remove a node.
-
-    Use the REST API or legacy UI instead. See [Remove a cluster node]({{< relref "/operate/rs/clusters/remove-node" >}}) for instructions.
 
 - Purge an Active-Active instance.
 
