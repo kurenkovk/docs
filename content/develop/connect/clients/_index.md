@@ -17,7 +17,7 @@ weight: 45
 
 Use the Redis client libraries to connect to Redis servers from
 your own code. We support client libraries
-for five main languages:
+for six main languages:
 - [Python]({{< relref "/develop/connect/clients/python" >}})
 - [C#/.NET]({{< relref "/develop/connect/clients/dotnet" >}})
 - [Node.js]({{< relref "/develop/connect/clients/nodejs" >}})
@@ -42,6 +42,14 @@ Redis does not support directly:
 | [PHP](https://www.php.net/) | predis | https://github.com/predis/predis | https://github.com/predis/predis/wiki |
 | [Ruby](https://www.ruby-lang.org/en/) | redis-rb | https://github.com/redis/redis-rb | https://rubydoc.info/gems/redis |
 | [Rust](https://www.rust-lang.org/) | redis-rs | https://github.com/redis-rs/redis-rs | https://docs.rs/redis/latest/redis/ | 
+
+## Proprietary clients
+
+The table below lists alternative proprietary clients:
+
+| Language | Client name/Link |
+| :-- | :--
+| Delphi | [PBRedisClient](https://pybridge.net/product/pbredisclient/)
 
 ## Requirements
 
